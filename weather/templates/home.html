@@ -3,11 +3,7 @@
 
 {% block content %}
 Weather App goes here
+<!-- {{ Weather.city_temperature }} -->
+
 <img src=https://developer.accuweather.com/sites/default/files/34-s.png>
 {% endblock content %}
-<form method="POST" action="/search">
-    {% csrf_token %}
-    <input type="text" name="textfield">
-    
-    <button type="submit">Upload text</button>
-    </form>
