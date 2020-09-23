@@ -1,9 +1,21 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %} -->
 
 
 {% block content %}
 Weather App goes here
-<!-- {{ Weather.city_temperature }} -->
+
 
 <img src=https://developer.accuweather.com/sites/default/files/34-s.png>
 {% endblock content %}
+
+{% block content2 %}
+
+{% for ele in weather %}
+    <p>{{ele}}</p>
+{% endfor %}
+
+{% endblock content2 %}
+
+{% block content3 %}
+<img src=https://developer.accuweather.com/sites/default/files/38-s.png>
+{% endblock content3 %}
