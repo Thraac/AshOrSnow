@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import weather_view
+from .views import weather_view, search_view
 
 urlpatterns = [
-    path('', weather_view),
-
+    path('search', search_view),
+    path('weather', weather_view),
 ]

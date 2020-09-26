@@ -1,16 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
+from .models import Weather
 
-# Create your views here.
-from django.http import HttpResponse
-from .models import Weather, City
-from .forms import HomeForm
 
+def search_view(request, *args, **kwargs):
+
+    return render(request=request,
+                template_name="search.html",
+                context={"weather": Weather.objects.all}, 
+                status = 200)
 
 
 def weather_view(request, *args, **kwargs):
-    form = HomeForm()
-    search = input()
+
     return render(request=request,
-                template_name="home.html",
-                context={"weather": City.objects.all, "form": form}, 
+                template_name="results.html",
+                context={"weather": Weather.objects.all}, 
                 status = 200)
