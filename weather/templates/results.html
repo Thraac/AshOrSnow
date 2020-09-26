@@ -1,1 +1,9 @@
-<h1>{{ weather.city }}</h1>
+<h1>Test</h1>
+<h1>Articles</h1>
+<ul>
+{% for weather in results %}
+    <li>{{ temperature }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

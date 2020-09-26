@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import weather_view, search_view
+from .views import HomeView, WeatherView
 
+app_name = 'weather'
 urlpatterns = [
-    path('search', search_view),
-    path('weather', weather_view),
+    path('home', HomeView.as_view(), name='search'),
+    path('weather', WeatherView.as_view(), name='weather'),
 ]
