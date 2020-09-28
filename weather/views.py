@@ -23,7 +23,7 @@ def vote(request, city_id):
     city = get_object_or_404(CityLookup, pk=city_id)
 
     try:
-        input_city = city.weather_set
+        input_city = city.weather_set.get(pk=request.POST['city'])
     except (KeyError, Weather.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'detail.html', {
