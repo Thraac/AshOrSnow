@@ -1,6 +1,6 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'weather:search' city.id %}" method="post">
+<form action="{% url 'weather:search' %}" method="post">
     {% csrf_token %}
     <ul>
     {% for weather in city.weather_set.all %}
@@ -10,3 +10,9 @@
     <input type="text" name="city" id="city" placeholder="Search a city">
     <input type="submit" value="Search">
 </form>
+
+
+
+
+
+
