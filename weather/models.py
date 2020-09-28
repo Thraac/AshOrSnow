@@ -1,13 +1,30 @@
 from django.db import models
 
-# Create your models here.
-
-class Weather(models.Model):
-
-    city_weather = models.CharField(max_length=50, default='')
-    city_weather_image = models.CharField(max_length=3, default='')
-    city_temperature = models.CharField(max_length=4, default='')
-    city = models.CharField(max_length=100, default='')
+class CityLookup(models.Model):
+    city = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.weather_type, self.weather_image, self.city_temperature, self.city
+        return self.city
+
+
+class Weather(models.Model):
+    city = models.ForeignKey(CityLookup, on_delete=models.CASCADE)
+    weather = models.CharField(max_length=200, default="")
+
+    def __str__(self):
+        return self.weather
+
+class WeatherIcon(models.Model):
+    city = models.ForeignKey(CityLookup, on_delete=models.CASCADE)
+    weather_icon = models.CharField(max_length=200, default="")
+
+    def __str__(self):
+        return self.weather_icon
+
+
+class Temperature(models.Model):
+    city = models.ForeignKey(CityLookup, on_delete=models.CASCADE)
+    temperature = models.CharField(max_length=200, default="")
+
+    def __str__(self):
+        return self.temperature

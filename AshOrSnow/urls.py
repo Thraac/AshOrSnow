@@ -20,5 +20,5 @@ from weather import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('weather.urls'))
+    path('weather/', include('weather.urls'))
 ]
