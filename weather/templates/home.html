@@ -1,16 +1,28 @@
+<!DOCTYPE html> 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% load static %}
 
-<form action="{% url 'weather:search' %}" method="post">
-    {% csrf_token %}
-    <ul>
-    {% for weather in city.weather_set.all %}
-        <li>{{ city.city }}</li>
-    {% endfor %}
-    </ul>
-    <input type="text" name="city" id="city" placeholder="Search a city">
-    <input type="submit" value="Search">
+<link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+
+<head>
+    <Title>Weather Search</Title>
+    <link rel="icon" type="image/ico" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
+</head>
+
+<body>
+    <div class="box">
+        <h1>Check the Weather</h1>
+    </div>
+<form action="{% url 'weather:search' %}" method="post">{% csrf_token %}
+    <div class="box">
+        <input type="text" name="city" id="city" placeholder="Search a city">
+    </div>
+    <div class="box">
+        <input type="submit" value="Search">
+    </div>
+
 </form>
-
+</body>
 
 
 
