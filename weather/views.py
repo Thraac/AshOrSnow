@@ -11,7 +11,7 @@ def home(request):
     """
     View for the base home page
     """
-    return render(request, 'home.html', context)
+    return render(request, 'home.html', {'test': 78})
 
 
 
@@ -86,5 +86,24 @@ def search(request, *args, **kwargs):
 
         # Redirects to the results page since data is being posted
         new_city_id = new_city.id
-        return HttpResponseRedirect(reverse('weather:results', args=(new_city_id,)))
+
+
+        city = get_object_or_404(CityLookup, pk=new_city_id)
+        weather = get_object_or_404(Weather, pk=new_city_id)
+        temperature = get_object_or_404(Temperature, pk=new_city_id)
+        weather_icon = get_object_or_404(WeatherIcon, pk=new_city_id)
+
+        city_proper = str(city).title()
+
+        return render(request, 
+                'home.html', 
+                {'city': city_proper, 'weather': weather, 
+                'temperature': temperature, 'weather_icon': weather_icon})
+
+        # return HttpResponseRedirect(request.path_info, {'city': city_proper, 'weather': weather, 
+        #         'temperature': temperature, 'weather_icon': weather_icon})
+
+        # return HttpResponseRedirect(reverse('weather:home'), {'city': city_proper, 'weather': weather, 
+        #         'temperature': temperature, 'weather_icon': weather_icon})
+
 

@@ -1,6 +1,8 @@
 h1 {
-    font-family: Impact, Charcoal, sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
   }
+
+/* The input focuses on the search button and the search bar */
 input{
     border: none;
     padding: 10px;
@@ -35,7 +37,60 @@ input[type="submit"]:hover {
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   color: #222;
 }
+/* This what what centers the search options */
 .box{
   width: 100%;
   text-align:center;
 }
+/*  This is for the weather return  */
+.weather_box{
+  width: 100%;
+  text-align:center;
+}
+/* Outer weather layer border */
+.weather-side {
+  position: relative;
+  height: 200px;
+  border-radius: 25px;
+  background-color: #222831;
+  width: 150px;
+  -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  -o-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+          transform: translateZ(0) scale(1.02) perspective(1000px);
+  float: left;
+  padding: 10px;
+  margin: auto;
+}
+/* Inner weather layer border */
+.container {
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+  background-color: #222831;
+  color: #ffffff;
+  height: 200px;
+  /* padding: 7px; */
+}
+.date-container {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+.date-dayname {
+  margin: 0;
+}
+.temp {
+  float: right;
+}
+.weather-container {
+  position: absolute;
+  top: 70px;
+  left: 47px;
+}
+

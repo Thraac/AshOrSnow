@@ -6,7 +6,7 @@
 
 <head>
     <Title>Weather Search</Title>
-    <link rel="icon" type="image/ico" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
 </head>
 
 <body>
@@ -20,8 +20,31 @@
     <div class="box">
         <input type="submit" value="Search">
     </div>
-
 </form>
+
+<p>
+    <div class="weather_box">
+        <h1>{{ city }}</h1>
+        <h1>{{ weather }}</h1>
+        <h1>{{ temperature }}</h1>
+        <img src="{{ weather_icon }}">
+    </div>
+</p>
+
+<p>
+    <div class="weather-side">
+        <div class="container">
+            <div class='date-container'>
+                <h2 class='date-dayname'>Stockholm</h2>
+                <span>Sunny</span>
+                <span class="temp">{{ test }}°F</span>
+            </div>
+        <div class='weather-container'> 
+            <div class='weather-icon.feather'><image src='https://developer.accuweather.com/sites/default/files/17-s.png'></image></div>
+        </div>        
+        </div>
+    </div>
+</p>
 </body>
 
 
