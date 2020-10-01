@@ -44,7 +44,7 @@ def search(request, *args, **kwargs):
     """
     
     api_key = 'LXGGpNcbto33jbyFGv0yBADrLm8KEu8y' 
-
+    print(request)
     try:
         # grabs the city that was input 
         input_city = request.POST.get('city')
@@ -78,7 +78,7 @@ def search(request, *args, **kwargs):
         new_weather = Weather(city = new_city, weather = weather_type) 
         new_weather.save()
 
-        new_temperature = Temperature(city = new_city, temperature = temperature)
+        new_temperature = Temperature(city = new_city, temperature = int(temperature))
         new_temperature.save()
 
         new_weather_icon = WeatherIcon(city = new_city, weather_icon = weather_icon)

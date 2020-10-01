@@ -6,7 +6,7 @@
 
 <head>
     <Title>Weather Search</Title>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="https://png.pngtree.com/png-vector/20190629/ourmid/pngtree-sun-icon-design-png-image_1518941.jpg" />
 </head>
 
 <body>
@@ -22,32 +22,40 @@
     </div>
 </form>
 
-<p>
-    <div class="weather_box">
-        <h1>{{ city }}</h1>
-        <h1>{{ weather }}</h1>
-        <h1>{{ temperature }}</h1>
-        <img src="{{ weather_icon }}">
-    </div>
-</p>
-
-<p>
-    <div class="weather-side">
-        <div class="container">
-            <div class='date-container'>
-                <h2 class='date-dayname'>Stockholm</h2>
-                <span>Sunny</span>
-                <span class="temp">{{ test }}°F</span>
+{% if request.path == '/weather/search/' %}
+    <p>
+        <div class="weather-side"> 
+            <div class="container">
+                <div class='city-container'>
+                    <div class='all-container'>
+                        <h2 class="city-name">{{ city }}</h2>
+                        <div class="temp">{{ temperature }}°F</div>
+                        <div class="weather-type">{{ weather }}</div>
+                        <image class="weather-type-icon" src='{{ weather_icon }}'></image>
+                    </h2>
+                </div>      
             </div>
-        <div class='weather-container'> 
-            <div class='weather-icon.feather'><image src='https://developer.accuweather.com/sites/default/files/17-s.png'></image></div>
-        </div>        
+        </div>
+    </p>
+    </body>
+{% else %}
+    <div></div>
+{% endif %}
+
+
+<!-- This is for testing when the searches run out -->
+<!-- <p>
+    <div class="weather-side"> 
+        <div class="container">
+            <div class='city-container'>
+                <div class='all-container'>
+                    <h2 class="city-name">Stockholm</h2>
+                    <div class="temp">{{ test }}°F</div>
+                    <div class="weather-type">Cloudy</div>
+                    <image class="weather-type-icon" src='https://developer.accuweather.com/sites/default/files/07-s.png'></image>
+                </h2>
+            </div>      
         </div>
     </div>
 </p>
-</body>
-
-
-
-
-
+</body> -->
