@@ -1,8 +1,0 @@
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<Title>Weather Results: {{ city }}</Title>
-<head><link rel="icon" type="image/ico" href="{{ weather_icon }}" /></head>
-<h1>{{ city }}</h1>
-<h1>{{ weather }}</h1>
-<h1>{{ temperature }}</h1>
-<img src="{{ weather_icon }}">
-<a class='btn' href="{% url 'weather:home' %}">Search again?</a>
